@@ -2,8 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-let num = 13;
-
 export function App() {
   return (
     <View style={styles.container}>
@@ -15,8 +13,8 @@ export function App() {
   );
 }
 
-export function App1() {
-  let num = 10;
+export  function App1() {
+  let num = 11;
   return (
     <View style={{
         backgroundColor: 'fff', 
@@ -24,7 +22,7 @@ export function App1() {
         left: 100, 
         width: 200 }}>
       <Text style>Your lucky number:</Text>
-      <Text style>{num}</Text>
+      <Text style>{Math.round(Math.random() * 10)}</Text>
     </View>
   );
 }
@@ -41,7 +39,7 @@ export class App2 extends React.Component {
   }
 }
 
-export class App3 extends React.Component {
+export default class App3 extends React.Component {
 
   constructor() {
     super();
@@ -56,7 +54,7 @@ export class App3 extends React.Component {
         <Button 
           title="+"
           color="red"
-          onPress={()=>{
+          onPress={()=> {
             this.setState({counter: this.state.counter + 1}
           )}}
         />
@@ -66,7 +64,7 @@ export class App3 extends React.Component {
   }
 }
 
-export default class App4 extends React.Component {
+export class App4 extends React.Component {
 
   constructor() {
     super();
@@ -81,7 +79,6 @@ export default class App4 extends React.Component {
         <Button 
           title="+"
           color="red"
-          size="40"
           onPress={()=>{
             this.setState({counter: this.state.counter + 1}
           )}}
