@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, StyleSheet, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 
 export function App() {
   return (
@@ -13,7 +13,7 @@ export function App() {
   );
 }
 
-export  function App1() {
+export function App1() {
   let num = 11;
   return (
     <View style={{
@@ -22,7 +22,7 @@ export  function App1() {
         left: 100, 
         width: 200 }}>
       <Text style>Your lucky number:</Text>
-      <Text style>{Math.round(Math.random() * 10)}</Text>
+      <Text style>{num}</Text>
     </View>
   );
 }
@@ -39,7 +39,7 @@ export class App2 extends React.Component {
   }
 }
 
-export default class App3 extends React.Component {
+export class App3 extends React.Component {
 
   constructor() {
     super();
@@ -70,7 +70,7 @@ export class App4 extends React.Component {
     super();
     this.state = {
       counter: 0
-    }
+    };
   }
 
   render() {
@@ -79,7 +79,7 @@ export class App4 extends React.Component {
         <Button 
           title="+"
           color="red"
-          onPress={()=>{
+          onPress={() => {
             this.setState({counter: this.state.counter + 1}
           )}}
         />
@@ -126,6 +126,61 @@ export class App5 extends React.Component {
   }
 }
 
+
+export class App6 extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      counter: 0
+    }
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <TouchableOpacity 
+          style={{
+            height: 100,
+            width: 100,
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 10,
+            backgroundColor: 'lightblue',
+            borderRadius:10,
+            borderWidth: 3,
+            borderColor: '#111'
+          }}
+          onPress={()=>{
+            this.setState({counter: this.state.counter + 1}
+          )}}
+        >
+          <Text style={{fontSize: 44}}>+</Text>
+        </TouchableOpacity>
+        <Text style={{fontSize: 36}}>{this.state.counter}</Text>
+        <TouchableOpacity 
+          style={{
+            height: 100,
+            width: 100,
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 10,
+            backgroundColor: 'pink',
+            borderRadius:10,
+            borderWidth: 3,
+            borderColor: '#111'
+          }}
+          onPress={()=>{
+            this.setState({counter: this.state.counter - 1}
+          )}}
+        >
+          <Text style={{fontSize: 44}}>-</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -134,3 +189,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App6;
