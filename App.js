@@ -14,7 +14,8 @@ export function App() {
 }
 
 export function App1() {
-  let num = 11;
+  //let num = 11;
+  let num = Math.round(Math.random() * 10);
   return (
     <View style={{
         backgroundColor: 'fff', 
@@ -32,11 +33,14 @@ export class App2 extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <StatusBar style="auto" />
+        <Button
+          title="Press Me!"
+          color="blue"
+          onPress={()=>console.log("I'm pressed!")}/>
       </View>
     );
   }
+
 }
 
 export class App3 extends React.Component {
