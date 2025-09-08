@@ -194,4 +194,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App6;
+export default App5;
